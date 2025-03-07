@@ -18,13 +18,13 @@ def check_password_strength(password):
     if len(password) >= 8:
         strength += 1
 
-    if re.search("[a-z]", password) and search("[A-Z]", password):
+    if re.search("[a-z]", password) and re.search("[A-Z]", password):
         strength += 1
 
     if re.search(r"\d", password):
         strength += 1
 
-    if search("[!@#$%^&*(),.?\":{}|<>-_]", password):
+    if re.search("[!@#$%^&*(),.?\":{}|<>-_]", password):
         strength += 1
 
     # Provide feedback on the strength of the password evaluated based on the above four conditions
